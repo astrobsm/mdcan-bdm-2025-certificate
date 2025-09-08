@@ -1,0 +1,343 @@
+.certificate-generator {
+  margin-bottom: 2rem;
+}
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-container h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.name-input,
+.type-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e8ed;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.name-input:focus,
+.type-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.preview-btn,
+.download-btn,
+.hide-preview-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.preview-btn {
+  background: #3498db;
+  color: white;
+}
+
+.preview-btn:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.download-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.download-btn:hover:not(:disabled) {
+  background: #229954;
+  transform: translateY(-2px);
+}
+
+.hide-preview-btn {
+  background: #95a5a6;
+  color: white;
+  margin-top: 1rem;
+}
+
+.hide-preview-btn:hover {
+  background: #7f8c8d;
+}
+
+.preview-btn:disabled,
+.download-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Certificate styles for PDF generation */
+.certificate-download {
+  width: 1400px;
+  height: 1000px;
+  background: 
+    /* Green and white ribbons at corners */
+    linear-gradient(45deg, #0d7330 0%, #0d7330 15px, #ffffff 15px, #ffffff 30px, #0d7330 30px, #0d7330 45px, transparent 45px),
+    linear-gradient(-45deg, #0d7330 0%, #0d7330 15px, #ffffff 15px, #ffffff 30px, #0d7330 30px, #0d7330 45px, transparent 45px),
+    linear-gradient(135deg, #0d7330 0%, #0d7330 15px, #ffffff 15px, #ffffff 30px, #0d7330 30px, #0d7330 45px, transparent 45px),
+    linear-gradient(225deg, #0d7330 0%, #0d7330 15px, #ffffff 15px, #ffffff 30px, #0d7330 30px, #0d7330 45px, transparent 45px),
+    /* Corner ornaments */
+    radial-gradient(circle at 70px 70px, rgba(212, 175, 55, 0.1) 0%, transparent 80px),
+    radial-gradient(circle at calc(100% - 70px) 70px, rgba(212, 175, 55, 0.1) 0%, transparent 80px),
+    radial-gradient(circle at 70px calc(100% - 70px), rgba(212, 175, 55, 0.1) 0%, transparent 80px),
+    radial-gradient(circle at calc(100% - 70px) calc(100% - 70px), rgba(212, 175, 55, 0.1) 0%, transparent 80px),
+    /* Subtle texture */
+    linear-gradient(45deg, transparent 40%, rgba(212, 175, 55, 0.03) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(212, 175, 55, 0.03) 50%, transparent 60%),
+    /* Main background */
+    linear-gradient(135deg, #fefefe 0%, #f8f9fa 50%, #fefefe 100%);
+  background-size: 
+    120px 120px, 120px 120px, 120px 120px, 120px 120px,
+    100% 100%, 100% 100%, 100% 100%, 100% 100%,
+    100% 100%, 100% 100%,
+    100% 100%;
+  background-position:
+    top left, top right, bottom left, bottom right,
+    0 0, 0 0, 0 0, 0 0,
+    0 0, 0 0,
+    0 0;
+  background-repeat: no-repeat;
+  border: 15px solid;
+  border-image: linear-gradient(45deg, #d4af37, #ffd700, #e6c560, #ffd700, #d4af37) 1;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.certificate-download .certificate-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 60px 300px 60px;
+  height: calc(100% - 300px);
+  box-sizing: border-box;
+}
+
+.certificate-download::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.certificate-download::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.certificate-download .certificate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.certificate-download .logo-placeholder {
+  width: 140px;
+  height: 140px;
+  border: 3px solid #d4af37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #d4af37;
+  text-align: center;
+  line-height: 1.2;
+  background: white;
+}
+
+.certificate-download .logo-image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.certificate-download .golden-seal {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffd700 0%, #d4af37 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  border: 4px solid #b8860b;
+}
+
+.certificate-download .seal-text {
+  color: #8b4513;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.certificate-download .certificate-title {
+  font-size: 44px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin: 25px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.certificate-download .certificate-text {
+  font-size: 24px;
+  color: #34495e;
+  text-align: center;
+  margin: 10px 0;
+  line-height: 1.3;
+}
+
+.certificate-download .participant-name {
+  font-size: 36px;
+  font-weight: bold;
+  color: #d4af37;
+  text-align: center;
+  margin: 20px 0;
+  text-decoration: underline;
+  text-decoration-color: #d4af37;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.certificate-download .conference-details {
+  text-align: center;
+  margin: 20px 0;
+  flex-shrink: 0;
+}
+
+.certificate-download .event-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.certificate-download .signatures {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  width: 85%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.certificate-download .signature {
+  text-align: center;
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.certificate-download .signature-line {
+  border-bottom: 3px solid #34495e;
+  margin-bottom: 12px;
+  height: 45px;
+}
+
+.certificate-download .signature-image {
+  width: 200px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  background: transparent;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.certificate-download .signature-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.certificate-download .signature-title {
+  font-size: 18px;
+  color: #34495e;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .preview-btn,
+  .download-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
