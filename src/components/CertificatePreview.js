@@ -47,6 +47,10 @@ const CertificatePreview = ({ participantName = "[Participant's Name]" }) => {
         </div>
       </div>
       
+      <div className="cpd-units-preview">
+        <div className="cpd-text-preview">CPD UNITS: 10</div>
+      </div>
+      
       <div className="signatures">
         <div className="signature">
           <img src="/president-signature.png" alt="President Signature" className="signature-image-preview" />
@@ -116,6 +120,10 @@ const CertificatePreview = ({ participantName = "[Participant's Name]" }) => {
         <div className="certificate-text">
           Held at the multipurpose hall of the international conference centre, Enugu on 1st–6th September, 2025.
         </div>
+      </div>
+      
+      <div className="cpd-units-preview">
+        <div className="cpd-text-preview">CPD UNITS: 10</div>
       </div>
       
       <div className="signatures">

@@ -164,6 +164,8 @@ const CertificateGenerator = ({ participantName, setParticipantName, showPreview
         .participant-name { font-size: 26px; font-weight: bold; color: #d4af37; text-align: center; margin: 12px 0; text-decoration: underline; text-decoration-color: #d4af37; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); position: relative; z-index: 2; }
         .conference-details { text-align: center; margin: 12px 0; position: relative; z-index: 2; }
         .event-name { font-size: 20px; font-weight: bold; color: #2c3e50; margin-bottom: 4px; line-height: 1.3; position: relative; z-index: 2; }
+        .cpd-units { text-align: center; margin: 20px auto; padding: 12px; background: linear-gradient(45deg, #d4af37, #ffd700); border-radius: 20px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); display: inline-block; width: fit-content; min-width: 180px; position: relative; z-index: 2; }
+        .cpd-text { font-size: 18px; font-weight: bold; color: #2c3e50; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); letter-spacing: 1.5px; }
         .signatures { display: flex; justify-content: space-around; margin-top: 25px; margin-bottom: 10px; position: relative; z-index: 2; position: absolute; bottom: 80px; left: 25px; right: 25px; background: rgba(255, 255, 255, 0.95); padding: 15px; border-radius: 10px; }
         .signature { text-align: center; width: 200px; }
         .signature-image { width: 160px; height: 50px; object-fit: contain; margin-bottom: 8px; background: transparent; display: block; margin-left: auto; margin-right: auto; }
@@ -194,6 +196,10 @@ const CertificateGenerator = ({ participantName, setParticipantName, showPreview
               <div class="event-name">MEDICAL AND DENTAL CONSULTANTS' ASSOCIATION OF NIGERIA</div>
               <div class="event-name">14th Biennial Delegates' Meeting and SCIENTIFIC Conference</div>
               <div class="certificate-text">Held at the multipurpose hall of the international conference centre, Enugu on 1st–6th September, 2025.</div>
+            </div>
+            
+            <div class="cpd-units">
+              <div class="cpd-text">CPD UNITS: 10</div>
             </div>
           </div>
           
@@ -234,6 +240,10 @@ const CertificateGenerator = ({ participantName, setParticipantName, showPreview
               <div class="event-name">MEDICAL AND DENTAL CONSULTANTS' ASSOCIATION OF NIGERIA</div>
               <div class="event-name">14th Biennial Delegates' Meeting and SCIENTIFIC Conference</div>
               <div class="certificate-text">Held at the multipurpose hall of the international conference centre, Enugu on 1st–6th September, 2025.</div>
+            </div>
+            
+            <div class="cpd-units">
+              <div class="cpd-text">CPD UNITS: 10</div>
             </div>
           </div>
           
